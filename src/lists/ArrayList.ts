@@ -41,7 +41,9 @@ export class ArrayList<T> implements IArrayList<T> {
         return this.items.findIndex(item => Object.is(item, value));
     }
     findLast(value: T): number {
-        return this.items.length - 1 - [...this.items].reverse().findIndex(item => Object.is(item, value));
+        const idx = [...this.items].reverse().findIndex(item => Object.is(item, value));
+        if (idx === -1) return -1;
+        return this.items.length - 1 - idx;
     }
     extend(other: IArrayList<T>): void {
         this.items.push(...other.toArray());
