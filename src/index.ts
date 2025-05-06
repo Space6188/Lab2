@@ -1,11 +1,7 @@
-import http from 'http';
+import { LinkedList } from './lists/linkedList';
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello, TypeScript !\n');
-});
-
-const PORT = 3000;
-server.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+const ll = new LinkedList<string>();
+ll.append('a');
+ll.append('b');
+ll.insert('start', 0);
+console.log('List:', ll.toArray());

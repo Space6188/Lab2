@@ -114,7 +114,6 @@ export class LinkedList<T> {
       }
     }
   
-    // Custom methods
     toArray(): T[] {
       const arr: T[] = [];
       let curr = this.head;
@@ -143,6 +142,24 @@ export class LinkedList<T> {
         curr = curr.next;
       }
       return result;
+    }
+  
+    filter(fn: (value: T, index: number) => boolean): LinkedList<T> {
+      const result = new LinkedList<T>();
+      let curr = this.head;
+      let idx = 0;
+      while (curr) {
+        if (fn(curr.value, idx)) {
+          result.append(curr.value);
+        }
+        curr = curr.next;
+        idx++;
+      }
+      return result;
+    }
+
+    isEmpty(): boolean {
+      return this.len === 0;
     }
   
     private find(value: T, first: boolean): number {
