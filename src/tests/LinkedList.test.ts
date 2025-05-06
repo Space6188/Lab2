@@ -118,14 +118,14 @@ describe('LinkedList', () => {
     list.append(1);
     list.append(2);
     const arr: number[] = [];
-    list.forEach((v, i) => arr.push(v + i));
+    list.forEach((v: number, i: number) => arr.push(v + i));
     expect(arr).toEqual([1, 3]);
   });
 
   test('map', () => {
     list.append(1);
     list.append(2);
-    const mapped = list.map((v) => v * 2);
+    const mapped = list.map((v: number) => v * 2);
     expect(mapped.toArray()).toEqual([2, 4]);
   });
 
@@ -133,7 +133,7 @@ describe('LinkedList', () => {
     list.append(1);
     list.append(2);
     list.append(3);
-    const filtered = list.filter((v) => v % 2 === 1);
+    const filtered = list.filter((v: number) => v % 2 === 1);
     expect(filtered.toArray()).toEqual([1, 3]);
   });
 
