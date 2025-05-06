@@ -1,4 +1,4 @@
-import { LinkedList } from './lists/linkedList';
+import { LinkedList } from "./lists/LinkedList";
 
 const ll = new LinkedList<string>();
 ll.append('a');

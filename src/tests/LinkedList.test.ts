@@ -1,4 +1,4 @@
-import { LinkedList } from '../lists/linkedList.js';
+import { LinkedList } from '../lists/LinkedList';
 
 describe('LinkedList', () => {
   let list: LinkedList<number>;
