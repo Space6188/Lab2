@@ -1,4 +1,4 @@
-import { IArrayList } from './ArrayListType.js';
+import { IArrayList } from '../types/ArrayListType';
 
 export class ArrayList<T> implements IArrayList<T> {
     private items: T[] = [];
