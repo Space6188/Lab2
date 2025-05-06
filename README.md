@@ -8,7 +8,7 @@
 
 1. **Склонуйте репозиторій**  
    ```bash
-   git clone https://github.com/ВАШ_КОРИСТУВАЧ/lab2-linked-list-js-ts.git
+   git clone https://github.com/Space6188/lab2-linked-list-js-ts.git
    cd lab2-linked-list-js-ts
 ````
 
