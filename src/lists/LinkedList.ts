@@ -1,6 +1,7 @@
 import { Node } from './nodeClass.js';
+import { ILinkedList } from '../types/LinkedListType';
 
-export class LinkedList<T> {
+export class LinkedList<T> implements ILinkedList<T> {
     private head: Node<T> | null = null;
     private tail: Node<T> | null = null;
     private len = 0;
@@ -106,11 +107,10 @@ export class LinkedList<T> {
       return this.find(value, false);
     }
   
-    extend(other: LinkedList<T>): void {
-      let curr = other.head;
-      while (curr) {
-        this.append(curr.value);
-        curr = curr.next;
+    extend(other: ILinkedList<T>): void {
+      let curr = other.toArray();
+      for (let i = 0; i < curr.length; i++) {
+        this.append(curr[i]);
       }
     }
   
